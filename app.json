@@ -1,25 +1,44 @@
 {
   "expo": {
-    "name": "paceup",
+    "name": "PACEUP",
     "slug": "paceup",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#08090C",
+    "splash": {
+      "backgroundColor": "#08090C"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.paceup.fitness",
+      "infoPlist": {
+        "UIBackgroundModes": ["location", "fetch"],
+        "NSLocationWhenInUseUsageDescription": "PACEUP needs your location to track running routes, pace, and split telemetry in real-time.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "PACEUP records your running session even when the app is backgrounded or screen is turned off.",
+        "NSMotionUsageDescription": "PACEUP uses motion sensors to track step cadence and rhythm."
+      }
     },
     "android": {
+      "package": "com.paceup.fitness",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#08090C",
+        "foregroundImage": "./assets/android-icon-foreground.png"
       },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "ACTIVITY_RECOGNITION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION"
+      ],
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     }
   }
 }
